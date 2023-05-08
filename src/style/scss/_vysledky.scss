@@ -1,0 +1,237 @@
+.vysledky {
+    min-height: 100vh;
+    min-height: calc(var(--vh, 1vh) * 100);
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    background-image: url("assets/images/bcg_velky.png");
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    padding-top: 30vh;
+    gap: 120px;
+    
+    &__loga {
+        display: flex;
+        gap: 20px;
+        position: absolute;
+        top: 47px;
+        left: 62px;
+        width: 26%;
+
+        &__vse {
+            @include svg-responsive("logo-vse-text.svg", 47px, 30px);
+            width: 62%;
+            margin-top: 4%
+        }
+
+        &__noc {
+            @include svg-responsive("logo.svg", 44px, 44px);
+            width: 21%;
+
+        }
+
+    }
+
+    h2 {
+        position: absolute;
+        font-family: "WorkSans-Medium", sans-serif;
+        @include f(29, 1.29);
+        letter-spacing: 0.072em;
+        color: $zluta;
+        text-transform: uppercase;
+        top: 76px;
+        right: 70px;
+
+    }
+    
+    &__half {
+        display: grid;
+            grid-template-columns: 64px 285px 89px;
+            grid-template-rows: 30px 48px 48px 48px 48px 48px 48px 48px;
+
+        & > div {
+            border-bottom: 1px solid #2F314B;
+        }
+
+        & > :nth-last-child(1),:nth-last-child(2),:nth-last-child(3)  {
+            border-bottom: none;
+        }
+
+        & > :nth-child(3n+5) {
+            padding: 8.5px 0;
+        }
+
+        & > :nth-child(3n+6) {
+            padding: 8.5px 0;
+        }
+
+        & > :nth-child(3n+4) {
+            padding: 12.5px 0;
+        }
+        
+
+        &:nth-child(2n-1) {
+            display: grid;
+            grid-template-columns: 102px 249px 162px;
+            grid-template-rows: 30px 120px 120px 120px;
+
+            & > :nth-child(3n+5) {
+                padding: 48px 0;
+            }
+
+            & > :nth-child(3n+6) {
+                padding: 44.5px 0;
+            }
+
+            & > :nth-child(3n+4) {
+                padding: 23.5px 0;
+            }
+
+            & > :nth-child(3n) {
+                text-align: right;
+                padding-right: 30px;
+            }
+
+        }
+
+        &__headline {
+            font-family: "WorkSans-Medium", sans-serif;
+            @include f(14, 1.5);
+            letter-spacing: -0.022em;
+            color: $seda;
+
+        }
+
+        &__line {            
+
+            &-name {
+                font-family: "WorkSans-SemiBold", sans-serif;
+                @include f(24, 1.5);
+                letter-spacing: -0.022em;
+
+                &-small {
+                    font-family: "WorkSans-Light", sans-serif;
+                    @include f(20, 1.5);
+                    letter-spacing: -0.022em;
+
+                }
+
+            }
+
+            &-money {
+                font-family: "WorkSans-SemiBold", sans-serif;
+                @include f(31, 1.5);
+                letter-spacing: -0.022em;
+                white-space:nowrap;
+
+                &:nth-child(6) {
+                    color: $zlata;
+                }
+
+                &:nth-child(9) {
+                    color: $stribrna;
+                }
+
+                &:nth-child(12) {
+                    color: $bronz;
+                }
+
+                &-small {
+                    color: $bila !important;
+                    @include f(20, 1.5);
+                    text-align: right;
+                }
+
+            }
+
+            &-num {
+                font-family: "WorkSans-SemiBold", sans-serif;
+                @include f(18, 1.5);
+                letter-spacing: -0.022em;
+
+            }
+
+        }
+
+    }
+    &__right {
+        width: 500px;
+        height: 500px;
+        display: grid;
+        grid-template-rows: 0.5fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        &__headline {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+
+            border-bottom: 1px solid #2F314B;
+            &__title {
+                font-family: "WorkSans-Medium", sans-serif;
+                @include f(14, 1.5);
+                letter-spacing: -0.022em;
+                color: $seda;
+                &.hodnota {
+                    text-align: right;
+                }
+            }
+        }
+        &__line {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            align-items: center;
+            border-bottom: 1px solid #2F314B;
+            &:last-child {
+                border: none;
+                padding-top: 15px;
+            }
+            &-name {
+                font-family: "WorkSans-SemiBold", sans-serif;
+                @include f(24, 1.2);
+                letter-spacing: -0.022em;
+
+                &-small {
+                    font-family: "WorkSans-Light", sans-serif;
+                    @include f(20, 1.2);
+                    letter-spacing: -0.022em;
+
+                }
+
+            }
+
+            &-money {
+                font-family: "WorkSans-SemiBold", sans-serif;
+                @include f(31, 1.2);
+                letter-spacing: -0.022em;
+
+                &:nth-child(6) {
+                    color: $zlata;
+                }
+
+                &:nth-child(9) {
+                    color: $stribrna;
+                }
+
+                &:nth-child(12) {
+                    color: $bronz;
+                }
+
+                &-small {
+                    color: $bila !important;
+                    @include f(20, 1.2);
+                    text-align: right;
+                }
+
+            }
+
+            &-num {
+                font-family: "WorkSans-SemiBold", sans-serif;
+                @include f(18, 1.2);
+                letter-spacing: -0.022em;
+
+            }
+        }
+    }
+
+}

@@ -1,0 +1,184 @@
+@use "sass:math";
+
+$cerna: #000000;
+$bila: #fff;
+$bcg: #1D1E3C;
+
+$zelena: #00A887;
+$zluta: #F7A707;
+$ruzova: #D3065B;
+$zelena_tmava: #1F6E6A;
+$seda: #AAB5CE;
+
+$zlata: #FFC32E;
+$stribrna: #CCD3E5;
+$bronz: #D35437;
+
+$seda_disabled: #808ea4;
+$cervena_error: #ff4d4d;
+
+$mobil_mini: 380px;
+$mobil: 520px;
+$tablet: 768px;
+
+$laptop_mac: 1360px;
+$laptop_big: 1600px;
+$tablet-big: 1160px;
+$desktop_mini: 1024px;
+
+$dektop_1820: 1820px;
+$desktopBig: 1920px;
+
+$grid_sirka: 1160px;
+
+@mixin img($img, $width, $height) {
+  width: ($width);
+  background: url("assets/images/#{$img}") no-repeat;
+  padding-top: ($height);
+  background-size: ($width) ($height);
+  height: 0;
+  overflow: hidden;
+}
+
+@mixin image($img, $width, $height) {
+  width: ($width);
+  background: url("assets/images/#{$img}") no-repeat;
+  padding-top: ($height);
+  background-size: ($width) ($height);
+  height: 0;
+  overflow: hidden;
+}
+
+@mixin svg($img, $width, $height) {
+  width: ($width);
+  background: url("assets/svg/#{$img}") no-repeat;
+  padding-top: ($height);
+  background-size: ($width) ($height);
+  height: 0;
+  overflow: hidden;
+}
+
+@mixin image-responsive($img, $width, $height) {
+  width: 100%;
+  background: url("assets/images/#{$img}") no-repeat;
+  padding-top: math.div($height, $width) * 100 * 1%;
+  background-size: contain;
+  height: 0;
+  overflow: hidden;
+}
+
+@mixin svg-responsive($img, $width, $height) {
+  width: 100%;
+  background: url("assets/svg/#{$img}") no-repeat;
+  padding-top: math.div($height, $width) * 100 * 1%;
+  background-size: contain;
+  height: 0;
+  overflow: hidden;
+}
+
+$wrapper: 100%;
+$gutter: 0rem;
+
+@mixin row($inside: false) {
+  @if ($inside == false) {
+    margin-left: -$gutter/2;
+    margin-right: -$gutter/2;
+  } @else {
+    width: 100%;
+    max-width: $wrapper;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  &:before,
+  &:after {
+    content: "";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+@mixin col($width: 1, $padding: true) {
+  float: left;
+  width: percentage($width);
+  @if ($padding == true) {
+    padding-left: $gutter/2;
+    padding-right: $gutter/2;
+  }
+}
+@mixin push($width: 0) {
+  position: relative;
+  left: percentage($width);
+}
+@mixin pull($width: 0) {
+  position: relative;
+  right: percentage($width);
+}
+
+/* Easy breakpoint mixin */
+@mixin mq($value) {
+  @media only screen and (min-width: $value) {
+    @content;
+  }
+}
+
+@mixin font-size($sizeValue: 12) {
+  font-size: $sizeValue + px; //fallback for old browsers
+  font-size: (0.0625 * $sizeValue) + rem;
+}
+@mixin line-height($heightValue: 20) {
+  line-height: $heightValue + px; //fallback for old browsers
+  line-height: (0.0625 * $heightValue) + rem;
+}
+@mixin font($sizeValue: 12, $heightValue: 20) {
+  @include font-size($sizeValue);
+  @include line-height($heightValue);
+}
+
+// mixin pro stylování velikosti textu a prokladů v2
+@mixin font-size2($sizeValue: 12) {
+  font-size: $sizeValue + px; // fallback pro staré prohlížeče
+  font-size: (0.0625 * $sizeValue) + rem;
+}
+@mixin line-height2($heightValue: 1.2, $sizeValue: 12) {
+  $heightValue: $sizeValue * $heightValue;
+  line-height: $heightValue + px; //fallback pro staré prohlížeče
+  line-height: (0.0625 * $heightValue) + rem;
+}
+
+@mixin f($sizeValue: 12, $heightValue: 20) {
+  @include font-size2($sizeValue);
+  @include line-height2($heightValue, $sizeValue);
+}
+
+//mixin pro označení hover stavu navigace
+@mixin navigace-active($width: 100%, $height: 3px, $border-radius: 5px) {
+  content: " ";
+  clear: both;
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: $zelena;
+  margin: 0px auto 0 auto;
+  border-radius: 5px;
+}
+
+//$list: $modra_tmava, $fialova, $modra_tmava;
+@mixin gradient($direction, $list2) {
+  background: -webkit-linear-gradient($direction, $list2);
+  background: -moz-linear-gradient($direction, $list2);
+  background: -o-linear-gradient($direction, $list2);
+  background: linear-gradient($direction, $list2);
+}
+
+@mixin clearfix() {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin transition($duration: 0.2s) {
+  transition: all ease-in-out $duration;
+}

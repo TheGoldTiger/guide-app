@@ -1,0 +1,14 @@
+$red: #f34242;
+
+.alert {
+    position: absolute;
+    right: 30px;
+    bottom: 30px;
+    background-color: #941617;
+    color: $red;
+    border-bottom: 10px $red solid;
+    &__box {
+        margin: 10px 30px;
+    }
+    
+}

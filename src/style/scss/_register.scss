@@ -1,0 +1,204 @@
+.register {
+    min-height: 100vh;
+    min-height: calc(var(--vh, 1vh) * 100);
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url("assets/images/bcg.png");
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+
+    // @media (max-width: $mobil_mini) {
+    //     min-height: unset;
+    //     height: 90vh;
+    // }
+
+    &__logo {
+        display: flex;
+        gap: 20px;
+        position: absolute;
+        top: 14px;
+        right: 14px;
+        width: 29%;
+
+        &__vse {
+            @include svg-responsive("logo-vse.svg", 47px, 30px);
+            margin-top: 8%;
+
+        }
+
+        &__noc {
+            @include svg-responsive("logo.svg", 44px, 44px);
+
+        }
+
+    }
+
+    &__tecky {
+        @include svg-responsive("tecky2.svg", 47px, 30px);
+        position: absolute;
+        width: 13%;
+        left: 15px;
+        top: 4%;
+        @media (max-width: $mobil) {
+            width: 16%;
+        }
+    }
+
+    h2 {
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        text-align: center;
+        @include f(25, 1.3);
+        margin-top: 13vh;
+        @media (max-width: $mobil) {
+            @include f(20, 1.3);
+        }
+        @media (max-width: $mobil_mini) {
+            @include f(17, 1.3);
+        }
+    }
+
+    &__about {
+        color: $zluta;
+        font-family: "WorkSans-Bold", sans-serif;
+        @include f(25, 1.4);
+        margin-top: 15px;
+        letter-spacing: 0.033em;
+        max-width: 190px;
+        text-align: center;
+        @media (max-width: $mobil) {
+            @include f(20, 1.4);
+            max-width: 150px;
+            margin-top: 28px;
+        }
+        @media (max-width: $mobil) {
+            @include f(17, 1.2);
+            margin-top: 15px;
+        }
+    }
+
+    &__info {
+        @include f(13, 1.5);
+        letter-spacing: -0.019em;
+        margin-top: 60px;
+        font-family: "WorkSans-Medium", sans-serif;
+        @media (max-width: $mobil) {
+            @include f(11, 1.5);
+            margin-top: 15px;
+        }
+        @media (max-width: $mobil_mini) {
+            @include f(10, 1.5);
+            margin-top: 10px;
+        }
+
+    }
+
+    input {
+        @include f(18, 1.48);
+        font-family: "WorkSans-SemiBold", sans-serif;
+        letter-spacing: 0.04em;
+        border-radius: 12px;
+        border: 2px solid $bila;
+        background-color: inherit;
+        color: $bila;
+        text-align: center;
+        padding: 10px 6px;
+        width: 60%;
+        margin-top: 8px;
+        @media (max-width: $mobil) {
+            @include f(16, 1.48);
+            padding: 12px 6px;
+            margin-top: 30px;
+        }
+        @media (max-width: $mobil_mini) {
+            @include f(13, 1.48);
+            padding: 8px 6px;
+            margin-top: 30px;
+            width: 55%;
+        }
+
+        &:focus {
+            outline: none;
+        }
+
+        &::-webkit-input-placeholder { /* Edge */
+            color: $bila;
+        }
+          
+        &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+            color: $bila;
+        }
+          
+        &::placeholder {
+            color: $bila;
+        }
+
+    }
+
+    &__kobylka {
+        @include image-responsive("kobylka.png", 58px, 234px);
+        transform: rotate(180deg);
+        position: absolute;
+        width: 10%;
+        right: 0;
+        bottom: 28%;
+        @media (max-width: $mobil) {
+            width: 14%;
+            bottom: 21%;
+        }
+    }
+
+    &__login {
+        font-family: "WorkSans-SemiBold", sans-serif;
+        @include f(18, 1.48);
+        letter-spacing: 0.04em;
+        max-width: 200px;
+        text-align: center;
+        margin-top: 100px;
+        @media (max-width: $mobil) {
+            @include f(14, 1.48);
+            max-width: 150px;
+            margin-top: 40px;
+        }
+        @media (max-width: $mobil_mini) {
+            @include f(13, 1.48);
+            max-width: unset;
+        }
+
+        &:hover {
+            cursor: pointer;
+            text-decoration: underline
+        }
+
+    }
+
+    &__ps {
+        @include f(14, 1.5);
+        letter-spacing: -0.019em;
+        text-align: center;
+        max-width: 300px;
+        position: absolute;
+        bottom: 70px;
+        font-family: "WorkSans-Medium", sans-serif;
+        @media (max-width: $mobil) {
+            @include f(10, 1.5);
+            max-width: 220px;
+        }
+
+    }
+
+    button {
+        margin-top: 60px;
+        @media (max-width: $mobil) {
+            margin-top: 40px;
+        }
+        @media (max-width: $mobil_mini) {
+            margin-top: 35px;
+        }
+    }
+
+}

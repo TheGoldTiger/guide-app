@@ -1,0 +1,245 @@
+.home {
+    min-height: 100vh;
+    min-height: calc(var(--vh, 1vh) * 100);
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url("assets/images/bcg.png");
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+
+    &__logo {
+        @include svg-responsive("logo.svg", 10px, 10px);
+        width: 15%;
+        position: absolute;
+        right: 25px;
+        top: 25px;
+        @media (max-width: $mobil) {
+            right: 19px;
+            top: 19px;
+            width: 18%;
+        }
+        @media (max-width: $mobil_mini) {
+            width: 15%;
+        }
+
+        h1 {
+            visibility: hidden;
+        }
+
+    }
+
+    &__ruka {
+        @include image("ruka_s_okem.png", 170px, 171px);
+        position: absolute;
+        top: 0;
+        left: 20%;
+        @media (max-width: $mobil) {
+            @include image("ruka_s_okem.png", 140px, 141px);
+            left: 20%;
+        }
+        @media (max-width: $mobil_mini) {
+            @include image("ruka_s_okem.png",110px, 110px);
+            left: 20%;
+        }
+    }
+
+    &__stupnice {
+        @include svg-responsive("stupnice.svg", 31px, 272px);
+        width: 7%;
+        position: absolute;
+        left: 0;
+        top: 5%;
+        @media (max-width: $mobil) {
+            width: 8%;
+        }
+    }
+    
+    h2 {
+        margin-top: 22vh;
+        @include f(40, 1.15);
+        letter-spacing: 0.04em;
+        max-width: 326px;
+        text-align: center;
+        margin-bottom: 25px;
+        @media (max-width: $mobil) {
+            margin-top: 22vh;
+            @include f(34, 1.15);
+            letter-spacing: 0.04em;
+            margin-bottom: 20px;
+        }
+        @media (max-width: $mobil_mini) {
+            @include f(26, 1.15);
+            max-width: 200px;
+            margin-top: 22vh;
+            margin-bottom: 20px;
+        }
+    }
+
+    span {
+        font-family: "WorkSans-SemiBold", sans-serif;
+        @include f(19, 1.4);
+        max-width: 362px;
+        text-align: center;
+        letter-spacing: 0.03em;
+        @media (max-width: $mobil) {
+            @include f(15, 1.4);
+            max-width: 252px;
+            letter-spacing: 0.03em;
+        }
+        @media (max-width: $mobil_mini) {
+            @include f(13, 1.4);
+            max-width: 220px;
+        }
+
+    }
+
+    &__tecky {
+        @include svg-responsive("tecky.svg", 56px, 101px);
+        width: 10%;
+        position: absolute;
+        right: 0;
+        top: 38%;
+        @media (max-width: $mobil) {
+            width: 12%;
+        }
+    }
+
+    &__tips {
+        margin-top: 30px;
+        display: flex;
+        flex-direction: column;
+        margin-left: -25px;
+        gap: 16px;
+        margin-bottom: 20px;
+        @media (max-width: $mobil) {
+            gap: 8px;
+            margin-top: 20px;
+        }
+        @media (max-width: $mobil_mini) {
+            gap: 4px;
+            margin-top: 10px;
+        }
+
+        &__tip {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            p {
+                width: 50.5%;
+                @include f(16, 1.25);
+                @media (max-width: $mobil) {
+                    width: 50.5%;
+                    @include f(14, 1.25);
+                }
+                @media (max-width: $mobil_mini) {
+                    @include f(13, 1.25);
+                }
+            }
+
+            span {
+                font-family: "WorkSans-SemiBold", sans-serif;
+                color: $zelena;
+                @include f(32, 1.2);
+                flex: 0 0 70px;
+                letter-spacing: -0.022em;
+                margin-bottom: 7px;
+                @media (max-width: $mobil) {
+                    @include f(25, 1.4);
+                    flex: 0 0 70px;
+                    letter-spacing: -0.022em;
+                    margin-bottom: 5px;
+                }
+                @media (max-width: $mobil_mini) {
+                    @include f(22, 1.4);
+                }
+            }
+
+            &:nth-child(2) {
+                span {
+                    align-self: flex-start;
+                    margin-top: -5px;
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+    }
+
+    button {
+        margin-top: 40px;
+        @media (max-width: $mobil) {
+            margin-top: 20px;
+        }
+        @media (max-width: $mobil_mini) {
+            margin-top: 5px;
+        }
+    }
+
+    &__end {
+        margin-top: 20px;
+        font-family: "WorkSans-SemiBold", sans-serif;
+        @include f(18, 1.5);
+        letter-spacing: -0.022em;
+        text-align: center;
+        @media (max-width: $mobil) {
+            @include f(16, 1.5);
+        }
+        @media (max-width: $mobil_mini) {
+            @include f(14, 1); 
+        }
+
+        span {
+            @include f(14, 1.5);
+            margin-top: 2px;
+            letter-spacing: -0.022em;
+            @media (max-width: $mobil) {
+                @include f(11, 1.5);
+                margin-top: 2px; 
+            }
+            @media (max-width: $mobil_mini) {
+                @include f(11, 1.5);
+            }
+        }
+
+    }
+
+    &__logo-vse {
+        @include svg("logo-vse-text.svg", 236px, 56px);
+        bottom: 35px;
+        position: absolute;
+        left: 35px;
+        @media (max-width: $mobil) {
+            @include svg("logo-vse-text.svg", 169px, 40px);
+            bottom: 70px;
+            left: 30px;
+        }
+        @media (max-width: $mobil_mini) {
+            @include svg("logo-vse-text.svg", 152px, 36px);
+            bottom: 15px;
+            left: 20px;
+        }
+    }
+
+    &__vlny {
+        @include svg("vlny.svg", 865px, 62px);
+        bottom: 30px;
+        position: absolute;
+        right: -270px;
+        @media (max-width: $mobil) {
+            @include svg("vlny.svg", 666px, 48px);
+            bottom: 70px;
+            right: -261px;
+        }
+        @media (max-width: $mobil_mini) {
+            @include svg("vlny.svg", 599px, 43px);
+            right: -220px;
+            bottom: 10px;
+        }
+    }
+
+}

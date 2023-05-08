@@ -1,0 +1,166 @@
+.result {
+    min-height: 100vh;
+    min-height: calc(var(--vh, 1vh) * 100);
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url("assets/images/bcg.png");
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+
+    // @media (max-width: $mobil_mini) {
+    //     min-height: unset;
+    //     height: 90vh;
+    // }
+
+    &__ucho {
+        @include img("ucho_trubka.png", 291px, 228px);
+        position: absolute;
+        bottom: -29px;
+        left: -31px;
+        transform: rotate(-2.75deg);
+        @media (max-width: $mobil) {
+            @include img("ucho_trubka.png", 243px, 190px);
+            bottom: -29px;
+            left: -31px;
+        }
+        @media (max-width: $mobil_mini) {
+            @include img("ucho_trubka.png", 218px, 171px);
+            bottom: -20px;
+            left: -25px;
+        }
+
+    }
+
+    &__tecky {
+        @include svg("tecky2.svg", 78px, 141px);
+        position: absolute;
+        bottom: 46px;
+        right: 20px;
+        @media (max-width: $mobil) {
+            @include svg("tecky2.svg", 56px, 101px);
+            bottom: 46px;
+            right: 14px;
+        }
+
+    }
+
+    &__headline {
+        margin-top: 20vh;
+        font-family: "WorkSans-Bold", sans-serif;
+        @include f(29, 1.8);
+        color: $zluta;
+        letter-spacing: 0.03em;
+        text-align: center;
+        max-width: 300px;
+        @media (max-width: $mobil) {
+            @include f(24, 1.8);
+            margin-top: 17vh;
+        }
+        @media (max-width: $mobil_mini) {
+            @include f(20, 1.6);
+        }
+
+        span {
+            @include f(23, 1.3);
+            @media (max-width: $mobil) {
+                @include f(20, 1.3);
+
+            }
+            @media (max-width: $mobil_mini) {
+                @include f(17, 1.3);
+            }
+        }
+
+    }
+
+    &__info {
+        font-family: "WorkSans-SemiBold", sans-serif;
+        @include f(19, 1.3);
+        letter-spacing: 0.04em;
+        margin-top: 45px;
+        text-align: center;
+        max-width: 350px;
+        overflow-y: auto;
+        max-height: 24vh;
+        @media (max-width: $mobil) {
+            @include f(16, 1.3);
+            max-width: 300px;
+            margin-top: 25px;   
+        }
+        @media (max-width: $mobil_mini) {
+            @include f(14, 1.5);
+            max-width: 240px;
+            margin-top: 20px;  
+        }
+    }
+
+    &__stav {
+        border: 2px solid $zelena;
+        border-radius: 12px;
+        font-family: "WorkSans-SemiBold", sans-serif;
+        @include f(24, 1.48);
+        letter-spacing: 0.04em;
+        padding: 8px 0;
+        width: 250px;
+        text-align: center;
+        margin-top: 50px;
+        z-index: 3;
+        @media (max-width: $mobil) {
+            @include f(20, 1.48);
+            width: 202px;
+            padding: 5px 0;
+            margin-top: 30px;
+        }
+        @media (max-width: $mobil_mini) {
+            @include f(18, 1.48);
+            width: 170px;
+            margin-top: 25px;
+        }
+
+    }
+
+    &__text {
+        font-family: "WorkSans-Medium", sans-serif;
+        @include f(13, 1.5);
+        letter-spacing: -0.022em;
+        margin-top: 10px;
+        z-index: 3;
+        @media (max-width: $mobil_mini) {
+            @include f(11, 1.5);
+        }
+
+    }
+    &__vysvetleni {
+        margin-top: 25px;
+        @include f(18, 1.5);
+        font-family: "WorkSans-Bold", sans-serif;
+        color: $bcg;
+        width: 60px;
+        height: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-image: url(assets/svg/cnb_ikon.svg);
+        background-size: contain;
+        background-position: center center;
+        background-repeat: no-repeat;
+        
+    }
+
+    button {
+        margin-top: 65px;
+        z-index: 3;
+        @media (max-width: $mobil) {
+            margin-top: 45px;
+        }
+        @media (max-width: $mobil_mini) {
+            margin-top: 40px;
+        }
+
+    }
+
+}

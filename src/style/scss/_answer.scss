@@ -1,0 +1,195 @@
+.answer {
+    min-height: 100vh;
+    min-height: calc(var(--vh, 1vh) * 100);
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url("assets/images/bcg.png");
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+
+    // @media (max-width: $mobil_mini) {
+    //     min-height: unset;
+    //     height: 90vh;
+    // }
+
+    &__tecky {
+        @include svg-responsive("tecky2.svg", 67px, 121px);
+        width: 12%;
+        position: absolute;
+        top: 11%;
+        left: -0.5%;
+        @media (max-width: $mobil) {
+            width: 15%;
+        }
+
+    }
+
+    &__stupnice {
+        @include svg("stupnice.svg", 40px, 358px);
+        position: absolute;
+        right: 4px;
+        bottom: -8px;
+        @media (max-width: $mobil) {
+            @include svg("stupnice.svg", 30px, 269px);
+        }
+
+    }
+
+    &__headline {
+        margin-top: 21vh;
+        font-family: "WorkSans-Bold", sans-serif;
+        @include f(29, 1.8);
+        color: $zluta;
+        letter-spacing: 0.03em;
+        text-align: center;
+        max-width: 300px;
+        @media (max-width: $mobil) {
+            margin-top: 24vh;
+            @include f(24, 1.8);
+            max-width: 300px;
+        }
+        @media (max-width: $mobil_mini) {
+            @include f(20, 1.6);
+            margin-top: 19vh;
+        }
+
+        span {
+            @include f(23, 1.3);
+            @media (max-width: $mobil) {
+                @include f(20, 1.3);
+            }
+            @media (max-width: $mobil_mini) {
+                @include f(17, 1.3);
+            }
+        }
+
+    }
+
+    &__text {
+        font-family: "WorkSans-SemiBold", sans-serif;
+        @include f(25, 1.3);
+        letter-spacing: 0.04em;
+        margin-top: 30px;
+        @media (max-width: $mobil) {
+            @include f(20, 1.3);
+        }
+        @media (max-width: $mobil_mini) {
+            @include f(17, 1.3);
+        }
+
+    }
+
+    &__answers {
+        margin: 30px 0 70px;
+        display: grid;
+        grid-template-columns: 70px 70px;
+        grid-template-rows: 70px 70px;
+        gap: 30px 39px;
+        @media (max-width: $mobil) {
+            grid-template-columns: 55px 55px;
+            grid-template-rows: 55px 55px;
+            gap: 30px 35px;
+        }
+        @media (max-width: $mobil_mini) {
+            grid-template-columns: 47px 47px;
+            grid-template-rows: 47px 47px;
+            gap: 25px 30px;
+        }
+        
+
+        &__answer {
+            @include f(27, 1);
+            font-family: "WorkSans-SemiBold", sans-serif;
+            letter-spacing: 0.04em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-size: 100% 100%;
+            @media (max-width: $mobil) {
+                @include f(25, 1);
+            }
+            @media (max-width:$mobil_mini) {
+                @include f(22, 1);
+            }
+
+            &:nth-child(1) {
+                background-image: url('assets/svg/ctverec.svg');
+                width: 70px;
+                height: 70px;
+                @media (max-width: $mobil) {
+                    width: 55px;
+                    height: 55px;
+                }
+                @media (max-width: $mobil_mini) {
+                    width: 47px;
+                    height: 47px;
+                }
+            }
+
+            &:nth-child(2) {
+                background-image: url('assets/svg/kruh.svg');
+                width: 73px;
+                height: 73px;
+                @media (max-width: $mobil) {
+                    width: 58px;
+                    height: 58px;
+                }
+                @media (max-width: $mobil_mini) {
+                    width: 50px;
+                    height: 50px;
+                }
+            }
+
+            &:nth-child(3) {
+                background-image: url('assets/svg/trojuhelnik.svg');
+                width: 75px;
+                height: 75px;
+                padding-top: 9px;
+                @media (max-width: $mobil) {
+                    width: 60px;
+                    height: 60px;
+                    padding-top: 7px;
+                }
+                @media (max-width: $mobil_mini) {
+                    width: 52px;
+                    height: 52px;
+                    padding-top: 5px;
+                }
+            }
+
+            &:nth-child(4) {
+                background-image: url('assets/svg/hvezda.svg');
+                width: 75px;
+                height: 75px;
+                padding-top: 9px;
+                @media (max-width: $mobil) {
+                    width: 60px;
+                    height: 60px;
+                    padding-top: 7px;
+                }
+                @media (max-width: $mobil_mini) {
+                    width: 52px;
+                    height: 52px;
+                    padding-top: 5px;
+                }
+            }
+
+            &-selected {
+                filter: brightness(131%) hue-rotate(240deg);
+            }
+
+            &:hover {
+                cursor: pointer;
+            }
+
+            
+
+        }
+
+    }
+
+}

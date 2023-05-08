@@ -1,0 +1,304 @@
+.end {
+    min-height: 100vh;
+    min-height: calc(var(--vh, 1vh) * 100);
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url("assets/images/bcg.png");
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+
+    // @media (max-width: $mobil_mini) {
+    //     min-height: unset;
+    //     height: 90vh;
+    // }
+
+    canvas {
+        width: 100%;
+        height: 100vh;
+        height: calc(var(--vh, 1vh) * 100);
+        position: absolute;
+    }
+
+    &__logo {
+        display: flex;
+        gap: 20px;
+        position: relative;
+        width: 28%;
+        margin-top: 5vh;
+        @media (max-width: $mobil) {
+            width: 39%;
+        }
+
+        &__vse {
+            @include svg-responsive("logo-vse.svg", 47px, 30px);
+
+        }
+
+        &__noc {
+            @include svg-responsive("logo.svg", 44px, 44px);
+            width: 92%;
+        }
+
+    }
+
+    &__zena {
+        @include img("bruneta.png", 326px, 299px);
+        position: absolute;
+        z-index: -1;
+        bottom: 0;
+        right: -30px;
+        @media (max-width: $mobil_mini) {
+            @include img("bruneta.png", 228px, 209px);
+            right: -18px;
+        }
+    }
+
+    &__headline {
+        font-family: "WorkSans-Bold", sans-serif;
+        @include f(39, 1.12);
+        color: $zluta;
+        text-transform: uppercase;
+        letter-spacing: 0.03em;
+        text-align: center;
+        margin-top: -10vh;
+        @media (max-width: $mobil) {
+            @include f(34, 1.12);
+            margin-top: -8vh;
+        }
+        @media (max-width: $mobil_mini) {
+            @include f(29, 1.12);
+            margin-top: -8vh;
+        }
+
+        span {
+            text-transform: none;
+            @include f(20, 1.5);
+            letter-spacing: normal;
+            @media (max-width: $mobil) {
+                @include f(17, 1.5);
+            }
+        }
+
+    }
+
+    &__money {
+        margin-top: 20px;
+        font-family: "WorkSans-Bold", sans-serif;
+        @include f(24, 1.5);
+        letter-spacing: -0.022em;
+        text-transform: uppercase;
+        text-align: center;
+        @media (max-width: $mobil) {
+            @include f(21, 1.5);
+        }
+        @media (max-width: $mobil_mini) {
+            @include f(16, 1.5);
+        }
+
+        &__amount {
+            font-family: "WorkSans-SemiBold", sans-serif;
+            border: 2px solid $zelena;
+            width: 235px;
+            @include f(24, 1);
+            border-radius: 12px;
+            padding: 13px 0;
+            letter-spacing: 0.04em;
+            margin-top: 5px;
+            @media (max-width: $mobil) {
+                @include f(22, 1);
+            }
+            @media (max-width: $mobil_mini) {
+                @include f(17, 1);
+                width: 180px;
+            }
+
+        }
+
+    }
+    &__listen {
+        width: 100%;
+        position: relative;
+
+        &-story {
+            @include f(13, 1.9);
+            font-family: "WorkSans-Medium", sans-serif;
+            letter-spacing: 0.04em;
+            @media (max-width: $mobil_mini) {
+                @include f(11, 1.9);
+            }
+
+            &:hover {
+                cursor: pointer;
+                text-decoration: underline;
+            }
+
+        }
+
+        &-task {
+            margin-top: 0px;
+            @media (max-width: $mobil_mini) {
+                margin-top: -5px;
+            }
+        }
+        
+
+        &__icon {
+            // @include svg("icon_zvuk.svg", 80px, 80px);
+            width: 80px;
+            height: 80px;
+            position: absolute;
+            left: 49.185%;
+            top: 56%;
+            transform: translate(-50%, -50%);
+            cursor: pointer;
+            @media (max-width: $mobil) {
+                left: 49.3%;
+                @include svg("icon_zvuk.svg", 71px, 71px);
+            }
+            
+        }
+
+        #wrapper {
+            position: relative;
+            width: 100%;
+            height: 24vh;
+
+            img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                display: block;
+                white-space: nowrap;
+                width: 100%;
+                height: 100%;
+            }
+
+        }
+    }
+
+    &__thanks {
+        font-family: "WorkSans-Medium", sans-serif;
+        @include f(15, 1.3);
+        letter-spacing: 0.04em;
+        border-radius: 10px;
+        width: 250px;
+        text-align: center;
+        padding: 5px 20px;
+        @media (max-width: $mobil) {
+            @include f(14, 1.3);
+            width: 250px;
+            padding: 3px 10px;
+        }
+        @media (max-width: $mobil_mini) {
+            @include f(13, 1.3);
+        }
+
+    }
+
+    &__results {
+        font-family: "WorkSans-Medium", sans-serif;
+        @include f(19, 1.3);
+        letter-spacing: -0.022em;
+        color: $zluta;
+        text-align: center;
+        max-width: 300px;
+        margin-top: 65px;
+        @media (max-width: $mobil) {
+            @include f(16, 1.3);
+            margin-top: 10px;
+            max-width: 250px;
+        }
+        @media (max-width: $mobil_mini) {
+            margin-top: 5px;
+        }
+
+    }
+
+    &__share {
+        margin-top: 60px;
+        @media (max-width: $mobil_mini) {
+            margin-top: 70px;
+        }
+
+        label {
+            display: block;
+            position: relative;
+            text-align: center;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            @include f(12, 1.4);
+            font-family: "WorkSans-Medium", sans-serif;
+            max-width: 250px;
+            color: $zluta;
+            @media (max-width: $mobil_mini) {
+                max-width: 230px;
+            }
+    
+            &:hover {
+                span {
+                    background-color: $zluta;
+                }
+            }
+    
+            span {
+                position: absolute;
+                height: 27px;
+                width: 27px;
+                border-radius: 4px;
+                border: 2px solid $zelena;
+                left: 50%;
+                transform: translate(-50%, 0);
+                margin-top: -84px;
+    
+                &::after {
+                    content: "";
+                    position: absolute;
+                    display: none;
+                    left: 8px;
+                    top: 3px;
+                    width: 7px;
+                    height: 14px;
+                    border: solid $zelena;
+                    border-width: 0 2px 2px 0;
+                    -webkit-transform: rotate(45deg);
+                    -ms-transform: rotate(45deg);
+                    transform: rotate(45deg);
+                }
+
+                @media (max-width: $mobil_mini) {
+                    margin-top: -78px;
+                }
+    
+            }
+    
+            input {
+                position: absolute;
+                opacity: 0;
+                cursor: pointer;
+                height: 0;
+                width: 0;
+    
+                &:checked {
+                    span {
+                        background-color: #2196F3;
+                        
+                    }
+    
+                    & ~ span::after {
+                        display: block;
+                    }
+                }
+    
+            }
+    
+        }
+
+    }
+}

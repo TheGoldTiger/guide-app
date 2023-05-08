@@ -1,0 +1,296 @@
+.event {
+    min-height: 100vh;
+    min-height: calc(var(--vh, 1vh) * 100);
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url("assets/images/bcg.png");
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    background-color: $bcg;
+
+    // @media (max-width: $mobil_mini) {
+    //     min-height: unset;
+    //     height: 91vh;
+    // }
+
+    &-yellow {
+        background-color: $zluta;
+
+        .story__money {
+            border: 1px solid $cerna !important;
+    
+            span:first-child {
+                color: $cerna;
+    
+            }
+    
+        }
+
+        button {
+            background-color: $bcg !important;
+            // width: auto !important;
+            margin-top: 40px !important;
+            @media (max-width: $mobil) {
+                margin-top: 25px !important;
+            }
+        }
+
+    }
+
+    &__logo {
+        display: flex;
+        gap: 20px;
+        position: absolute;
+        top: 14px;
+        right: 14px;
+        width: 29%;
+
+        &__vse {
+            @include svg-responsive("logo-vse.svg", 47px, 30px);
+            margin-top: 8%;
+
+        }
+
+        &__noc {
+            @include svg-responsive("logo.svg", 44px, 44px);
+
+        }
+
+    }
+
+    h2 {
+        font-family: "WorkSans-Bold", sans-serif;
+        @include f(29, 1);
+        letter-spacing: 0.03em;
+        margin-top: 20vh;
+        @media (max-width: $mobil) {
+            @include f(24, 1);
+        }
+
+    }
+
+    &__event {
+        color: $cerna;
+        text-align: center;
+        font-family: "WorkSans-Bold", sans-serif;
+        @include f(17, 1.5);
+        letter-spacing: -0.022em;
+        max-width: 350px;
+        margin-top: 15px;
+        @media (max-width: $mobil) {
+            @include f(14, 1.5);
+            max-width: 200px;
+        }
+
+        &-code {
+            max-width: 320px;
+            text-transform: uppercase;
+            margin-top: 25px;
+            color: $bila;
+            letter-spacing: 0.03em;
+            @include f(21, 1.5);
+            @media (max-width: $mobil) {
+                max-width: 240px;
+                @include f(16, 1.5);
+            }
+        }
+
+    }
+
+    &__code {
+        color: $bila;
+        background-color: inherit;
+        border: 2px solid $zelena;
+        border-radius: 12px;
+        font-family: "WorkSans-Bold", sans-serif;
+        text-align: center;
+        @include f(20, 1.1);
+        padding: 14px 15px;
+        width: 290px;
+        letter-spacing: 0.005em;
+        margin-top: 40px;
+        text-transform: uppercase;
+        @media (max-width: $mobil) {
+            @include f(15, 1.1);
+            padding: 15px 10px;
+            width: 230px;
+        }
+        @media (max-width: $mobil_mini) {
+            margin-top: 30px;
+        }
+
+        &:focus {
+            outline: none;
+        }
+
+        &::-webkit-input-placeholder { /* Edge */
+            color: $bila;
+            @include f(14, 1.1);
+            @media (max-width: $mobil) {
+                @include f(11, 1.1);
+            }
+        }
+          
+        &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+            color: $bila;
+            @include f(14, 1.1);
+            @media (max-width: $mobil) {
+                @include f(11, 1.1);
+            }
+        }
+          
+        &::placeholder {
+            color: $bila;
+            @include f(14, 1.1);
+            @media (max-width: $mobil) {
+                @include f(11, 1.1);
+            }
+        }
+
+    }
+
+    &__info {
+        font-family: "WorkSans-Bold", sans-serif;
+        @include f(17, 1.5);
+        letter-spacing: -0.022em;
+        text-transform: uppercase;
+        margin-top: 50px;
+        @media (max-width: $mobil) {
+            @include f(14, 1.5);
+            margin-top: 10px;
+        }
+
+    }
+
+    &__amount {
+        color: $zelena;
+        font-family: "WorkSans-Bold", sans-serif;
+        @include f(40, 1.48);
+        letter-spacing: 0.04em;
+        margin-top: 30px;
+    }
+
+    &__stav {
+        @include f(25, 1.48);
+        letter-spacing: 0.04em;
+        border-radius: 12px;
+        border: 1px solid $zelena;
+        font-family: "WorkSans-Bold", sans-serif;
+        padding: 7px 55px;
+        margin-top: 10px;
+        color: $zelena;
+        @media (max-width: $mobil) {
+            @include f(20, 1.48);
+            padding: 6px 52px;
+            margin-top: 10px;
+        }
+
+    }
+
+    button {
+        margin-top: 60px;
+        // width: 160px;
+        display: block;
+        z-index: 100;
+        @media (max-width: $mobil) {
+            // width: 142px;
+            margin-top: 30px;
+        }
+
+    }
+
+    .small {
+        background-color: $ruzova !important;
+        margin-top: 30px !important;
+        @media (max-width: $mobil) {
+            margin-top: 20px !important;
+        }
+    }
+
+    &__tecky {
+        @include svg("tecky2.svg", 56px, 101px);
+        position: absolute;
+        bottom: 40px;
+        right: 10px;
+    }
+
+    &__kvetina {
+        @include img("kvetina_smell.png", 162px, 313px);
+        position: absolute;
+        bottom: -78px;
+        right: 0;
+    }
+
+    &__udalost {
+        position: relative;
+        cursor: default;
+        margin-top: 6vh;
+
+        @media (max-width: $mobil_mini) {
+            margin-top: 2vh;
+        }
+
+        .circle {
+            width:110px;
+            height:110px;
+            border-radius:100px;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);  
+            margin:100px auto 0;
+            text-align:center;
+            background-color: $bila;
+            position: relative;
+
+            .q {
+                height:80px;
+                margin:0 auto;
+                top: -35px;
+                position:relative;
+            }
+
+            span {
+                @include f(15, 1.11);
+                color: #1C1E3B;
+                margin-top: -22px;
+                font-family: "WorkSans-Bold", sans-serif;
+            }
+
+            .starD{
+                position:absolute;
+                left:2%;
+                top:-24%;
+                @media (max-width: $mobil_mini) {
+                    left:15%;
+                    top:-24%;
+                }
+            }
+            #starD{
+                height:30px;
+            }
+            
+            .starC{
+                position:absolute;
+                right:14%;
+                top:11%;
+                @media (max-width: $mobil_mini) {
+                    right:7%;
+                    top:11%;
+                }
+            }
+            #starC{
+                height: 25px;
+            }
+            .stars{
+                height:inherit;
+                width:inherit;
+                position:absolute;
+            }    
+
+        }
+
+    }
+
+}

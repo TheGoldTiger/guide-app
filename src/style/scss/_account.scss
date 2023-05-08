@@ -1,0 +1,84 @@
+.account {
+    min-height: 100vh;
+    min-height: calc(var(--vh, 1vh) * 100);
+    width: 100%;
+    background-color: $zelena;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url("assets/images/bcg.png");
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    justify-content: center;
+
+    &__logo {
+        display: flex;
+        gap: 20px;
+        position: absolute;
+        top: 14px;
+        right: 14px;
+        width: 29%;
+
+        &__vse {
+            @include svg-responsive("logo-vse.svg", 47px, 30px);
+            margin-top: 8%;
+
+        }
+
+        &__noc {
+            @include svg-responsive("logo.svg", 44px, 44px);
+
+        }
+
+    }
+
+    &__name {
+        font-family: "WorkSans-SemiBold", sans-serif;
+        @include f(25, 1.3);
+        letter-spacing: 0.04em;
+        text-align: center;
+        @media (max-width: $mobil) {
+            @include f(20, 1.3);
+        }
+
+        span {
+            font-family: "WorkSans-Bold", sans-serif;
+            color: $zluta;
+            @include f(40, 1.5);
+            letter-spacing: -0.022em;
+            margin-top: 20px;
+            @media (max-width: $mobil) {
+                margin-top: 10px;
+                @include f(35, 1.5);
+            }
+
+        }
+
+    }
+
+    &__info {
+        font-family: "WorkSans-Medium", sans-serif;
+        text-align: center;
+        @include f(17, 1.48);
+        letter-spacing: 0.04em;
+        max-width: 284px;
+        margin-top: 28px;
+        @media (max-width: $mobil) {
+            @include f(14, 1.48);
+            max-width: 235px;
+            margin-top: 18px;
+        }
+
+    }
+
+    button {
+        margin-top: 80px;
+        @media (max-width: $mobil) {
+            margin-top: 55px; 
+        }
+
+    }
+
+}

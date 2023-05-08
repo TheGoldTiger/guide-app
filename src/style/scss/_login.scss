@@ -1,0 +1,170 @@
+.login {
+    min-height: 100vh;
+    min-height: calc(var(--vh, 1vh) * 100);
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url("assets/images/bcg.png");
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+
+    // @media (max-width: $mobil_mini) {
+    //     min-height: unset;
+    //     height: 90vh;
+    // }
+
+    &__logo {
+        display: flex;
+        gap: 20px;
+        position: absolute;
+        top: 14px;
+        right: 14px;
+        width: 29%;
+
+        &__vse {
+            @include svg-responsive("logo-vse.svg", 47px, 30px);
+            margin-top: 8%;
+
+        }
+
+        &__noc {
+            @include svg-responsive("logo.svg", 44px, 44px);
+
+        }
+
+    }
+
+    h2 {
+        font-family: "WorkSans-SemiBold", sans-serif;
+        @include f(25, 1.3);
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        margin-top: 22vh;
+        @media (max-width: $mobil) {
+            @include f(20, 1.3);
+            margin-top: 20vh;
+        }
+        @media (max-width: $mobil_mini) {
+            @include f(17, 1.3);
+        }
+
+    }
+
+    input {
+        @include f(18, 1.48);
+        font-family: "WorkSans-SemiBold", sans-serif;
+        letter-spacing: 0.04em;
+        border-radius: 12px;
+        border: 2px solid $bila;
+        background-color: inherit;
+        color: $bila;
+        text-align: center;
+        padding: 10px 6px;
+        width: 55%;
+        margin-top: 30px;
+        @media (max-width: $mobil) {
+            @include f(14, 1.48);
+            padding: 10px 6px;
+            margin-top: 18px;
+        }
+        @media (max-width: $mobil_mini) {
+            @include f(13, 1.48);
+            padding: 8px 6px;
+            margin-top: 30px;
+            width: 55%;
+        }
+
+        &:focus {
+            outline: none;
+        }
+
+        &::-webkit-input-placeholder { /* Edge */
+            color: $bila;
+        }
+          
+        &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+            color: $bila;
+        }
+          
+        &::placeholder {
+            color: $bila;
+        }
+
+    }
+
+    button {
+        margin-top: 45px;
+        @media (max-width: $mobil) {
+            margin-top: 20px;
+        }
+        @media (max-width: $mobil_mini) {
+            margin-top: 35px;
+        }
+
+    }
+
+    &__story {
+        font-family: "WorkSans-Medium", sans-serif;
+        @include f(15, 1.48);
+        letter-spacing: 0.04em;
+        margin-top: 30px;
+        @media (max-width: $mobil) {
+            @include f(13, 1.48);
+        }
+        @media (max-width: $mobil_mini) {
+            @include f(13, 1.48);
+            max-width: unset;
+        }
+
+        &:hover {
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
+
+    }
+
+    &__citron {
+        position: absolute;
+        left: 38%;
+        bottom: 39px;
+        z-index: -1;
+    }
+
+    &__ruka {
+        @include img("ruka_citron.png", 453px, 276px);
+        transform: rotate(19.05deg);
+        position: relative;
+        @media (max-width: $mobil_mini) {
+            @include img("ruka_citron.png", 362px, 220px);
+        }
+
+    }
+
+    &__kapka {
+        @include svg("kapka.svg", 42px, 70px);
+        position: relative;
+        margin-left: 23px;
+        margin-top: -55px;
+        @media (max-width: $mobil_mini) {
+            @include svg("kapka.svg", 33px, 56px);
+            margin-left: 22px;
+            margin-top: -45px;
+        }
+    }
+
+    &__tecky {
+        @include svg-responsive("tecky2.svg", 47px, 30px);
+        position: absolute;
+        width: 13%;
+        left: 15px;
+        top: 4%;
+        @media (max-width: $mobil) {
+            width: 16%;
+        }
+    }
+
+}

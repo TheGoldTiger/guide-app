@@ -1,0 +1,54 @@
+@font-face {
+    font-family: "WorkSans-SemiBold";
+    src: url("assets/fonts/WorkSans-SemiBold.eot");
+    src: url("assets/fonts/WorkSans-SemiBold.eot?#iefix") format("embedded-opentype"),
+        url("assets/fonts/WorkSans-SemiBold.woff2") format("woff2"), url("assets/fonts/WorkSans-SemiBold.woff") format("woff"),
+        url("assets/fonts/WorkSans-SemiBold.svg#WorkSans-SemiBold") format("svg");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "WorkSans-Medium";
+    src: url("assets/fonts/WorkSans-Medium.eot");
+    src: url("assets/fonts/WorkSans-Medium.eot?#iefix") format("embedded-opentype"),
+        url("assets/fonts/WorkSans-Medium.woff2") format("woff2"), url("assets/fonts/WorkSans-Medium.woff") format("woff"),
+        url("assets/fonts/WorkSans-Medium.svg#WorkSans-Medium") format("svg");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "WorkSans-Light";
+    src: url("assets/fonts/WorkSans-Light.eot");
+    src: url("assets/fonts/WorkSans-Light.eot?#iefix") format("embedded-opentype"),
+        url("assets/fonts/WorkSans-Light.woff2") format("woff2"), url("assets/fonts/WorkSans-Light.woff") format("woff"),
+        url("assets/fonts/WorkSans-Light.svg#WorkSans-Light") format("svg");
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "WorkSans-Regular";
+    src: url("assets/fonts/WorkSans-Regular.eot");
+    src: url("assets/fonts/WorkSans-Regular.eot?#iefix") format("embedded-opentype"),
+        url("assets/fonts/WorkSans-Regular.woff2") format("woff2"), url("assets/fonts/WorkSans-Regular.woff") format("woff"),
+        url("assets/fonts/WorkSans-Regular.svg#WorkSans-Regular") format("svg");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "WorkSans-Bold";
+    src: url("assets/fonts/WorkSans-Bold.eot");
+    src: url("assets/fonts/WorkSans-Bold.eot?#iefix") format("embedded-opentype"),
+        url("assets/fonts/WorkSans-Bold.woff2") format("woff2"), url("assets/fonts/WorkSans-Bold.woff") format("woff"),
+        url("assets/fonts/WorkSans-Bold.svg#WorkSans-Bold") format("svg");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}

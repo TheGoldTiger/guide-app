@@ -1,0 +1,141 @@
+html {
+  font-size: 100%;
+
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  scroll-behavior: auto;
+
+  /*
+ 
+  overflow: hidden;
+  cursor: grab;
+  touch-action: none;
+
+*/
+}
+body {
+  font-family: "WorkSans-Regular", arial, sans-serif;
+  @include f(12, 1);
+  font-weight: 400;
+  color: $bila;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  min-height: calc(var(--vh, 1vh) * 100);
+  background: $bcg;
+}
+
+a,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+blockquote,
+li,
+ul,
+input,
+textarea {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  font-family: "WorkSans-Regular", arial, sans-serif;
+}
+
+div {
+  box-sizing: border-box;
+}
+strong {
+  font-weight: 700;
+  color: $cerna;
+}
+
+li {
+  list-style: none;
+}
+fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+img {
+  height: auto;
+}
+.br {
+  display: block;
+  clear: both;
+}
+img {
+  border: none;
+}
+span {
+  display: block;
+  clear: both;
+}
+
+h1 {
+  letter-spacing: 0.1px;
+}
+h2 {
+  font-family: "WorkSans-SemiBold", sans-serif;
+  letter-spacing: 0.1px;
+}
+h3 {
+  letter-spacing: 0.1px;
+}
+h4 {
+  letter-spacing: 0.1px;
+}
+h5 {
+  letter-spacing: 0.1px;
+  font-weight: 400;
+}
+p {
+  .br {
+    display: block;
+    clear: both;
+    overflow: hidden;
+  }
+}
+button {
+  font-family: "WorkSans-SemiBold", sans-serif !important;
+  letter-spacing: 0.04em;
+  font-size: 2rem !important;
+  line-height: 1.48rem !important;
+  background-color: $zluta !important;
+  height: 45px;
+  width: 165px;
+  white-space: nowrap;
+  border-radius: 7px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @media (max-width: $mobil) {
+    letter-spacing: 0.04em;
+    line-height: 1.2025rem !important;
+    font-size: 0.8125rem !important;
+    background-color: $zluta !important;
+    border-radius: 7px;
+  }
+  @media (max-width: $mobil_mini) {
+    letter-spacing: 0.04em;
+    line-height: 1.018rem !important;
+    font-size: 0.9rem !important;
+    background-color: $zluta !important;
+    border-radius: 7px;
+  }
+
+  &.down {
+    margin-top: 20px !important;
+    margin-bottom: 20px !important;
+  }
+
+}

@@ -1,0 +1,384 @@
+.story {
+    min-height: 100vh;
+    min-height: calc(var(--vh, 1vh) * 100);
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url("assets/images/bcg.png");
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+
+    // @media (max-width: $mobil_mini) {
+    //     min-height: unset;
+    //     height: 90vh;
+    // }
+
+    &__kobylka {
+        @include img("kobylka.png", 63px, 257px);
+        position: absolute;
+        left: 0;
+    }
+
+    &__logo {
+        display: flex;
+        gap: 20px;
+        position: absolute;
+        top: 14px;
+        right: 14px;
+        width: 29%;
+
+        &__vse {
+            @include svg-responsive("logo-vse.svg", 47px, 30px);
+            margin-top: 8%;
+
+        }
+
+        &__noc {
+            @include svg-responsive("logo.svg", 44px, 44px);
+
+        }
+
+    }
+
+    &__about {
+        color: $zluta;
+        text-transform: uppercase;
+        font-family: "WorkSans-Bold", sans-serif;
+        @include f(29, 1.2);
+        margin-top: 30px;
+        margin-top: 16vh;
+        text-align: center;
+        @media (max-width: $mobil) {
+            @include f(24, 1.2);
+            margin-top: 18vh;
+        }
+
+        span {
+            @include f(20, 1.3);
+            text-transform: none;
+            max-width: 250px;
+        }
+
+        &-task {
+            margin-top: 21vh;
+            @media (max-width: $mobil) {
+                margin-top: 24vh;
+            }
+            @media (max-width: $mobil_mini) {
+                margin-top: 15vh;
+                @include f(20, 1.4);
+            }
+
+            span {
+                @include f(18, 1.3);
+            }
+
+        }
+
+    }
+
+    &__listen {
+        width: 100%;
+        position: relative;
+        margin-top: 23px;
+
+        &-story {
+            @include f(13, 1.9);
+            font-family: "WorkSans-Medium", sans-serif;
+            letter-spacing: 0.04em;
+            @media (max-width: $mobil_mini) {
+                @include f(11, 1.9);
+            }
+
+            &:hover {
+                cursor: pointer;
+                text-decoration: underline;
+            }
+
+        }
+
+        &-task {
+            margin-top: 0px;
+            @media (max-width: $mobil_mini) {
+                margin-top: -5px;
+            }
+        }
+        
+
+        &__icon {
+            // @include svg("icon_zvuk.svg", 80px, 80px);
+            width: 80px;
+            height: 80px;
+            position: absolute;
+            left: 49.185%;
+            top: 56%;
+            transform: translate(-50%, -50%);
+            cursor: pointer;
+            @media (max-width: $mobil) {
+                left: 49.3%;
+                @include svg("icon_zvuk.svg", 71px, 71px);
+            }
+            
+        }
+
+        #wrapper {
+            position: relative;
+            width: 100%;
+            height: 24vh;
+
+            img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                display: block;
+                white-space: nowrap;
+                width: 100%;
+                height: 100%;
+            }
+
+        }
+
+        /*&__stopa {
+            @include svg-responsive("zvukova_stopa.svg", 424px, 126px);
+            padding-top: 33.716981%;
+        }*/
+        
+    }
+
+    &__text {
+        margin-top: 10px;
+        font-family: "WorkSans-SemiBold", sans-serif;
+        @include f(18, 1.75);
+        letter-spacing: -0.022em;
+        text-align: center;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        @media (max-width: $mobil) {
+            @include f(13, 1.75);
+            margin-top: 0px;
+        }
+        @media (max-width: $mobil_mini) {
+            @include f(12, 1.5);
+        }
+
+        &__arrow {
+            @include svg("arrow_down.svg", 40px, 25px);
+            margin-top: 25px;
+            @media (max-width: $mobil) {
+                @include svg("arrow_down.svg", 34px, 21px);
+                margin-top: 15px;
+            }
+            @media (max-width: $mobil_mini) {
+                @include svg("arrow_down.svg", 30px, 19px);
+                margin-top: 15px;
+            }
+        }
+
+        &__CC {
+            @include svg-responsive("CC.svg", 46px, 32px);
+            width: 30%;
+            display: block;
+            margin-top: 25px;
+            padding: 20px;
+            @media (max-width: $mobil) {
+                margin-top: 15px;   
+            }
+            @media (max-width: $mobil_mini) {
+                margin-top: 12px;
+            }
+
+            &:hover {
+                cursor: pointer;
+            }
+
+        }
+        
+    }
+
+    button {
+        margin-top: 25px;
+        margin-bottom: 50px;
+        position: relative;
+        @media (max-width: $mobil_mini) {
+            margin-bottom: 30px;
+            margin-top: 20px;
+        }
+    }
+
+    &__stupnice {
+        @include svg("stupnice.svg", 40px, 358px);
+        position: absolute;
+        right: 4px;
+        bottom: -8px;
+        @media (max-width: $mobil) {
+            @include svg("stupnice.svg", 30px, 269px);
+        }
+    }
+
+    &__tecky {
+        @include svg-responsive("tecky2.svg", 67px, 121px);
+        width: 12%;
+        top: 3%;
+        left: 6%;
+        position: absolute;
+        @media (max-width: $mobil) {
+            width: 14%;
+        }
+
+        &-task {
+            top: 11%;
+            left: -0.5%;
+            @media (max-width: $mobil) {
+                width: 15%;
+            }
+        }
+
+    }
+    &__task {
+        font-family: "WorkSans-Medium", sans-serif;
+        @include f(17, 1.5);
+        letter-spacing: -0.022em;
+        margin-top: 20px;
+        margin-bottom: 50px;
+    }
+    &__money {
+        position: absolute;
+        cursor: pointer;
+        z-index: 10;
+        top: 18px;
+        left: 14px;
+        border-radius: 9px;
+        border: 1px solid $zelena;
+        display: flex;
+        font-family: "WorkSans-Bold", sans-serif;
+        background: transparent;
+        @include f(18, 1);
+        letter-spacing: 0.033em;
+        padding: 7px 10px;
+        gap:11px;
+        align-items: center;
+        @media (max-width: $mobil) {
+            padding: 5px 8px;
+            gap:11px;
+            @include f(14, 1);
+        }
+
+
+        span:first-child {
+            color: $zelena;
+            @include f(12, 1);
+            letter-spacing: 0.048em;
+            width: 90px;
+            @media (max-width: $mobil) {
+                @include f(8, 1);
+                width: 57px;
+            }
+
+        }
+
+    }
+    &__udalost {
+        position: absolute;
+        cursor: pointer;
+        z-index: 5;
+        top: -5px;
+        left: 20px;
+        width: 100px;
+        height: 150px;
+        @media (max-width: $mobil_mini) {
+            width: 75px;
+            height: 112px;
+        } 
+        .circle{
+            width:100px;
+            height:100px;
+            border-radius:100px;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);  
+            margin:100px auto 0;
+            text-align:center;
+            background-color: $bila;
+            position: relative;
+            @media (max-width: $mobil_mini) {
+                width:75px;
+                height:75px;
+                border-radius:75px;
+                margin:90px auto 0;
+            }
+            .q{
+                height: 70px;
+                margin: 0 auto;
+                position:relative;
+                margin-top: -50px;
+                top: -35px;
+                @media (max-width: $mobil_mini) {
+                    height: 45px;
+                    top: -23px;
+                }
+            }
+            
+            .starB{
+                position:absolute;
+                left:4%;
+                top: -35%;
+                @media (max-width: $mobil_mini) {
+                    left:12%;
+                    top: -30%;
+                }
+            }
+            #starB{
+                height:20px;
+                @media (max-width: $mobil_mini) {
+                    height:16px;
+                }
+            }
+            
+            .starA{
+            position:absolute;
+            right:16%;
+            top:15%;
+                @media (max-width: $mobil_mini) {
+                    right:14%;
+                    top:15%;  
+                }
+            }
+            #starA{
+            height: 17px;
+            @media (max-width: $mobil_mini) {
+                height: 13px;  
+            }
+            }
+            .stars{
+            height:inherit;
+            width:inherit;
+            position:absolute;
+            pointer-events: none;
+            }    
+            span {
+                color: #1C1E3B;
+                position: absolute;
+                bottom: 16px;
+                line-height: 1;
+                letter-spacing: 0.005em;
+                font-family: "WorkSans-Bold", sans-serif;
+                @include f(15, 1);
+                @media (max-width: $mobil) {
+                    @include f(15, 1.1);
+                }
+                @media (max-width: $mobil_mini) {
+                    @include f(12, 1.1);
+                    bottom: 14px;
+                }
+
+            }
+        }
+    }
+
+    &__button {
+        margin-bottom: 25px !important;
+    }
+}
