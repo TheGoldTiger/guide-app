@@ -1,1 +1,1 @@
-Noc vědců 2022
+Testovací aplikace: https://bp.radomir-salda.cz
